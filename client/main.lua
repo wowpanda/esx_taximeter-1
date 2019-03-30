@@ -103,6 +103,9 @@ end)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
+  while ESX.GetPlayerData().job == nil do
+    Citizen.Wait(1)
+  end
   currentJob = ESX.GetPlayerData().job.name
 end)
 
